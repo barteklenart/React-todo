@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		ul {
+			margin: 0 auto;
+			width: 300px;
+			position: relative;
+		}
+		li {
+		  position: relative;
+		  text-align: center;
+		  list-style-type: none;
+		  padding: 8px 0;
+		  background-color: #000;
+		  color: #fff;
+		  margin-bottom: 2px;
+		  z-index:2;
+		  transition: background-color .3s;
+		  height: 105px;
+		}
+
+		li:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 0;
+			background-color: green;
+			transition: all .3s;
+			z-index: 3;
+		}
+
+		li:last-of-type:not(.first) {
+		  position: relative;
+		  margin: 0;
+		  transform: rotateX(180deg) scale(.9, .1) translateY(53px) skew(10deg);
+		  transition: transform .8s;
+		  transform-origin: top;
+		  z-index: -1;
+		}
+
+		body .app li.open {
+		  transform: rotateX(0) scale(1, 1);
+		  z-index: 1;
+		}
+
+
+		/*li.remove:before {
+			width: 100%;
+		}*/
+
+		body .app .content {
+			z-index: 4;
+		    display: inline-block;
+		    color: #fff;
+		    position: relative;
+		}
+
+		.del {
+			position: absolute;
+			right: 0;
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background-color: #000;
+			color: #fff;
+			top: 0;
+			line-height: 40px;
+			cursor: pointer;
+			transition: all .3s;
+		}
+		
+		/*li.remove {
+			animation-name: remove;
+    		animation-duration: 1s;
+    		animation-timing-function: linear;
+    		animation-fill-mode: forwards;
+		}
+
+		@keyframes remove{
+			0% {
+			    transform: translateX(0);
+			}
+
+			100% {
+
+			    transform: translateX(-200px);
+			    opacity: 0;
+			}
+		}	*/
+	</style>
+</head>
+<body class="">
+	<div id="app" class="app"></div>
+	<script src="app.min.js"></script>
+</body>
+</html>

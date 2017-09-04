@@ -1,6 +1,5 @@
 import React from 'react';
 
-//components
 import TodoList from './TodoList';
 import UniceId from '../utils/uniceid';
 
@@ -64,9 +63,12 @@ class Todo extends React.Component {
 		const newTodoArr = this.state.todo.filter( e => {
 				return e.taskname != elToFind 
 		} );
+		const alert = document.querySelector('.info-alert');
+		alert.classList.add('done')
 
 		setTimeout( () => {
 			el.classList.remove( 'done' );
+			alert.classList.remove('done');
 			this.setState({
 				todo: newTodoArr
 			})
@@ -117,7 +119,7 @@ class Todo extends React.Component {
 				</p>
 				<button onClick={ this.addTask.bind( this ) } id="add" className="add-button">DODAJ ZADANIE</button>
 				<div className="separator">
-					<img src="img/separator.png" alt="" />
+					<img src="img/separator.png" alt=""/>
 				</div>
 				<ul>
 					{ todoList }

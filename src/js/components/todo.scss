@@ -37,7 +37,12 @@
 		bottom: 0;
 		content: url(/img/Background_lewy.png);
 		z-index: -1;
-		left: -264px;
+		left: -562px;
+	}
+
+	@media screen and (max-width: 480px) {
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 
@@ -66,6 +71,10 @@ label {
 	display: inline-block;
 	min-width: 84px;
 	margin-bottom: 0;
+
+	@media screen and (max-width: 480px) {
+		width: 100%;
+	}
 }
 
 input {
@@ -77,6 +86,10 @@ input {
 	padding: 6px 20px;
 	font-family: 'Dosis', sans-serif;
 	border: 0;
+
+	@media screen and (max-width: 480px) {
+		width: 100%;
+	}
 }
 
 p {
@@ -103,16 +116,31 @@ p {
 		left: 0;
 		top: 1px;
 	}
+
+	@media screen and (max-width: 480px) {
+		margin-left: 0;
+	}
 }
 
 .separator {
 	padding: 30px 0;
+
+	img {
+		max-width: 100%;
+	}
 }
 
 .info-alert {
 	display: flex;
 	justify-content: center;
+	transition: all .3s;
+	opacity: 0;
+
+	&.done {
+		opacity: 1;
+	}
 }
+
 
 .info-alert-text {
 	text-transform: uppercase;
@@ -120,6 +148,7 @@ p {
 	color: #fff;
 	margin-left: 56px;
 	font-weight: 300;
+	font-family: 'Dosis', sans-serif;
 }
 
 
@@ -128,6 +157,10 @@ ul {
 	width: 430px;
 	position: relative;
 	padding-left: 0;
+
+	@media screen and (max-width: 480px) {
+		width: 100%;
+	}
 	
 }
 li {
@@ -164,6 +197,10 @@ li {
 
 		.check {
 			opacity: 1;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 	}
@@ -254,6 +291,10 @@ li {
 			border-left: 16.5px solid transparent;
 			bottom: 0;
 		}
+
+		@media screen and (max-width: 480px) {
+			width: 38px;
+		}
 	}
 
 
@@ -295,6 +336,10 @@ li {
 	width: 260px;;
 	display: inline-block;
 	padding: 26px;
+
+	@media screen and (max-width: 480px) {
+		width: 60%;
+	}
 }
 
 .content {

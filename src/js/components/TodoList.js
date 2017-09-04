@@ -1,17 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class TodoList extends React.Component {
 
 	removeElement( e ){
 		const target = e.target;
 		this.props.handleEvent( target.parentNode );
-		console.log( target.parentNode );
 	}
 
 	checkedElement( e ){
 		const target = e.target;
 		target.classList.add( 'checked' );
-		this.props.handleCheked( target.parentNode, target );
+		this.props.handleChecked( target.parentNode, target );
 	}
 
 	render(){
@@ -29,5 +29,12 @@ class TodoList extends React.Component {
 		)
 	}
 }
+
+TodoList.propTypes = {
+  taskname: PropTypes.string.isRequired,
+  tasktime: PropTypes.string,
+  iterate: PropTypes.number
+
+};
 
 module.exports = TodoList;

@@ -64,7 +64,7 @@ class Todo extends React.Component {
 				return e.taskname != elToFind 
 		} );
 		const alert = document.querySelector('.info-alert');
-		alert.classList.add('done')
+		alert.classList.add('done');
 
 		setTimeout( () => {
 			el.classList.remove( 'done' );
@@ -104,7 +104,7 @@ class Todo extends React.Component {
 			const { taskname, tasktime } = val
 			const isFirst = key == 0 ? 'first' : '';
 
-			return <TodoList key={ key } id={ UniceId() } iterate={ key } isFirst={ isFirst } taskname={ taskname }  tasktime={ tasktime } handleEvent={ this.removeElement.bind(this) } handleCheked={ this.removeAfterDone.bind(this) } />
+			return <TodoList key={ key } id={ UniceId() } iterate={ key } isFirst={ isFirst } taskname={ taskname }  tasktime={ tasktime } handleEvent={ this.removeElement.bind(this) } handleChecked={ this.removeAfterDone.bind(this) } />
 
 		});
 

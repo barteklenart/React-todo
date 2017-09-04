@@ -14,6 +14,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "cheerio": "^1.0.0-rc.2",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-autoid": "^0.1.2",
     "react-dom": "^15.6.1",

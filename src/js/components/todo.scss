@@ -369,6 +369,17 @@ li {
 	font-size: 2em;
 	display: block;
 	height: 32px;
+
+	&:hover {
+		+ .tooltip {
+			opacity: 1;
+		}
+	}
+}
+
+.tooltip {
+    background: #f0f7fd ;
+    padding: 5px;
 }
 
 .time {

@@ -21,7 +21,7 @@ class TodoList extends React.Component {
 				<span className="left-shape"></span>
 				<div className="task-content">
 					<span className="content">{ this.props.taskname }</span>
-					<span className="time">{ `${this.props.tasktime} Wykonaj zadanie ${iterate}` }</span>
+					<span className="time">{ `${this.props.tasktime} Accomplish a task ${iterate}` }</span>
 				</div>
 				<span className="check" onClick={ this.checkedElement.bind(this) }></span>
 				<span className="del" onClick={ this.removeElement.bind(this) }>X</span>

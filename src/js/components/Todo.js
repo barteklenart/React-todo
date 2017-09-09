@@ -9,10 +9,7 @@ class Todo extends React.Component {
 	constructor(){
 		super();
 		this.state = {
-			todo: [
-				{ 'taskname': 'task1', 'tasktime': 'time' },
-				{ 'taskname': 'task2', 'tasktime': 'time' }
-			]
+			todo: []
 		}
 	}
 
@@ -20,8 +17,10 @@ class Todo extends React.Component {
 		const taskname = document.getElementById( 'taskname' );
 		const tasktime = document.getElementById( 'tasktime' );
 		const newTodoArr = this.state.todo;
+		const taskNameString = taskname.value.trim().replace(/\s\s+/g, ' ');
+		
 		const tasks = {
-			'taskname': taskname.value,
+			'taskname': taskNameString,
 			'tasktime': tasktime.value
 		}
 		
@@ -61,7 +60,7 @@ class Todo extends React.Component {
 		el.classList.add( 'done' );
 		const elToFind = el.querySelector( '.content' ).innerText;
 		const newTodoArr = this.state.todo.filter( e => {
-				return e.taskname != elToFind 
+			return e.taskname != elToFind 
 		} );
 		const alert = document.querySelector( '.info-alert' );
 		alert.classList.add( 'done' );
@@ -80,16 +79,13 @@ class Todo extends React.Component {
 		el.classList.add( 'remove' );
 		const elToFind = el.querySelector( '.content' ).innerHTML;
 		const newTodoArr = this.state.todo.filter( e => {
-				return e.taskname != elToFind 
+			return e.taskname != elToFind 
 		} );
 
-		setTimeout( () => {
-			el.classList.remove( 'remove' );
-			this.setState({
-				todo: newTodoArr
-			})
-			
-		}, 1000 );
+		el.classList.remove( 'remove' );
+		this.setState({
+			todo: newTodoArr
+		})
 	}
 
 	handleKeyPress( e ){

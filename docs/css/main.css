@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400|Roboto:300&subset=latin-ext");
+* {
+  box-sizing: border-box;
+}
+
+.todo {
+  background-color: #242e38;
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  height: 100vh;
+}
+.todo:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: url(./img/bg_right.png);
+  z-index: -1;
+}
+
+.app {
+  font-size: 10px;
+  max-width: 429px;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 160px 0;
+  position: relative;
+}
+.app:before {
+  position: absolute;
+  bottom: 0;
+  content: url(./img/bg_left.png);
+  z-index: -1;
+  left: -562px;
+}
+@media screen and (max-width: 480px) {
+  .app {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.todo-header {
+  font-family: 'Dosis', sans-serif;
+  font-size: 3.13em;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  margin-bottom: 74px;
+}
+.todo-header:before {
+  content: url(./img/check_big.png);
+  transform: translateY(21px);
+  display: inline-block;
+  margin-right: 30px;
+}
+
+label {
+  font-size: 2em;
+  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  display: inline-block;
+  min-width: 84px;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  label {
+    width: 100%;
+  }
+}
+
+input {
+  width: calc(100% - 84px);
+  display: inline-block;
+  font-size: 1.6em;
+  color: #1f3343;
+  height: 39px;
+  padding: 6px 20px;
+  font-family: 'Dosis', sans-serif;
+  border: 0;
+}
+@media screen and (max-width: 480px) {
+  input {
+    width: 100%;
+  }
+}
+
+p {
+  margin-bottom: 3px;
+}
+
+.add-button {
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  position: relative;
+  padding-left: 36px;
+  margin-left: 84px;
+  margin-top: 15px;
+  cursor: pointer;
+  line-height: 24px;
+}
+.add-button:before {
+  content: url(./img/add.png);
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+@media screen and (max-width: 480px) {
+  .add-button {
+    margin-left: 0;
+  }
+}
+
+.separator {
+  padding: 30px 0;
+}
+.separator img {
+  max-width: 100%;
+}
+
+.info-alert {
+  display: flex;
+  justify-content: center;
+  transition: all .3s;
+  opacity: 0;
+}
+.info-alert.done {
+  opacity: 1;
+}
+
+.info-alert-text {
+  text-transform: uppercase;
+  font-size: 3.1em;
+  color: #fff;
+  margin-left: 56px;
+  font-weight: 300;
+  font-family: 'Dosis', sans-serif;
+}
+
+ul {
+  margin: 0 auto;
+  width: 430px;
+  position: relative;
+  padding-left: 0;
+}
+@media screen and (max-width: 480px) {
+  ul {
+    width: 100%;
+  }
+}
+
+li {
+  position: relative;
+  list-style-type: none;
+  background: #f0f7fd url(./img/bg_task_top.png) no-repeat top right;
+  color: #fff;
+  margin-bottom: 2px;
+  z-index: 2;
+  transition: all .3s;
+  height: 105px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  max-height: 105px;
+}
+li:hover {
+  background-color: #fff;
+  position: relative;
+}
+li:hover .left-shape {
+  background-image: none;
+}
+li:hover .left-shape:before {
+  border-top: 52.5px solid #fff;
+  border-left: 16.5px solid transparent;
+}
+li:hover .left-shape:after {
+  border-bottom: 52.5px solid #fff;
+  border-left: 16.5px solid transparent;
+}
+li:hover .check {
+  opacity: 1;
+  position: relative;
+}
+li:hover .del {
+  opacity: 1;
+}
+li:last-of-type:not(.first) {
+  position: relative;
+  margin: 0;
+  transform: rotateX(180deg) scale(0.9, 0.1) translateY(53px) skew(10deg);
+  transition: transform .8s;
+  transform-origin: top;
+  z-index: -1;
+}
+li.done {
+  width: calc(100% + 20px);
+  transform: translateX(-10px) !important;
+  height: 120px;
+  background: #fff;
+  max-height: 120px;
+}
+li.done .left-shape {
+  animation-name: hover;
+  animation-duration: .6s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  background-position: right -20px center;
+  background: #fd712c;
+  background: -moz-linear-gradient(left, #fd712c 0%, #f31f79 100%);
+  background: -webkit-linear-gradient(left, #fd712c 0%, #f31f79 100%);
+  background: linear-gradient(to right, #fd712c 0%, #f31f79 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd712c', endColorstr='#f31f79',GradientType=1 );
+}
+li.done .left-shape:before {
+  border-top: 60px solid #fff;
+  border-left: 16.5px solid transparent;
+  top: 0;
+}
+li.done .left-shape:after {
+  border-bottom: 60px solid #fff;
+  border-left: 16.5px solid transparent;
+  bottom: 0;
+}
+li.done .checked {
+  opacity: 1;
+}
+li.done .del {
+  opacity: 0;
+}
+li.remove {
+  max-height: 0;
+  opacity: 0;
+  display: none;
+}
+li .left-shape {
+  display: inline-block;
+  width: 120px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-image: url(./img/shadow2.png);
+  background-position: right -9px center;
+  height: 100%;
+  position: relative;
+  transition: background-position .3s;
+}
+li .left-shape:before, li .left-shape:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+}
+li .left-shape:before {
+  border-top: 52.5px solid #f0f7fd;
+  border-left: 16.5px solid transparent;
+  top: 0;
+}
+li .left-shape:after {
+  border-bottom: 52.5px solid #f0f7fd;
+  border-left: 16.5px solid transparent;
+  bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  li .left-shape {
+    width: 38px;
+  }
+}
+
+@keyframes hover {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    background-position: left center;
+  }
+}
+.check {
+  opacity: 0;
+  transition: all .3s;
+  display: inline-block;
+  height: 105px;
+  width: 30px;
+  position: relative;
+}
+.check:before {
+  content: url(./img/check_input.png);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.check.checked {
+  height: 120px;
+}
+.check.checked:before {
+  content: url(./img/check_small.png);
+}
+
+.task-content {
+  width: 260px;
+  display: inline-block;
+  padding: 26px;
+}
+@media screen and (max-width: 480px) {
+  .task-content {
+    width: 60%;
+  }
+}
+
+.content {
+  font-family: 'Dosis', sans-serif;
+  color: #333333;
+  font-size: 2em;
+  display: block;
+  height: 32px;
+}
+.content:hover + .tooltip {
+  opacity: 1;
+}
+
+.tooltip {
+  background: #f0f7fd;
+  padding: 5px;
+}
+
+.time {
+  font-size: 1.4em;
+  color: #777777;
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  height: 23px;
+}
+
+body .app li.open {
+  transform: rotateX(0) scale(1, 1);
+  z-index: 1;
+}
+
+body .app .content {
+  z-index: 4;
+  display: inline-block;
+  position: relative;
+}
+
+.del {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  border-top-left-radius: 71%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  bottom: 0;
+  line-height: 40px;
+  cursor: pointer;
+  transition: all .3s;
+  opacity: 0;
+}

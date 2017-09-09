@@ -3,7 +3,7 @@ import React from 'react';
 import TodoList from './TodoList';
 import UniceId from '../utils/uniceid';
 
-require('./todo.scss');
+// require('./todo.scss');
 
 class Todo extends React.Component {
 	constructor(){

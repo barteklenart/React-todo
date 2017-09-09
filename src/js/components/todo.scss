@@ -18,7 +18,7 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		content: url(/img/Background_prawy.png);
+		content: url(/img/bg_right.png);
 		z-index: -1;
 	}
 }
@@ -35,7 +35,7 @@
 	&:before {
 		position: absolute;
 		bottom: 0;
-		content: url(/img/Background_lewy.png);
+		content: url(/img/bg_left.png);
 		z-index: -1;
 		left: -562px;
 	}
@@ -56,7 +56,7 @@
 	margin-bottom: 74px;
 	
 	&:before {
-		content: url(/img/check_Duży.png);
+		content: url(/img/check_big.png);
 		transform: translateY(21px);
 		display: inline-block;
 		margin-right: 30px;
@@ -166,7 +166,7 @@ ul {
 li {
   position: relative;
   list-style-type: none;
-  background: #f0f7fd url(/img/Background_mały.png) no-repeat top right;
+  background: #f0f7fd url(/img/bg_task_top.png) no-repeat top right;
   color: #fff;
   margin-bottom: 2px;
   z-index:2;
@@ -331,7 +331,7 @@ li {
 	position: relative;
 
 	&:before {
-		content: url(/img/check_Input.png);
+		content: url(/img/check_input.png);
 		top: 50%;
 		left: 50%;
 		position: absolute;
@@ -341,10 +341,9 @@ li {
 
 
 	&.checked {
-		// background-image: url(/img/check_Mały.png);
 		height: 120px;
 		&:before {
-			content: url(/img/check_Mały.png);
+			content: url(/img/check_small.png);
 		}
 	}
 }
